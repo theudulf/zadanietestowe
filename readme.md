@@ -1,0 +1,2 @@
+dev mode: 'npm run start'
+build: 'npm run build'
