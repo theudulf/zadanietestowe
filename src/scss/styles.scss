@@ -1,0 +1,322 @@
+@import "~bootstrap/scss/bootstrap";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+$primaryFont: 'Lato', sans-serif;
+$secondaryFont: 'Playfair Display', serif;
+$primaryFontSize: 16px;
+$secondaryFontSize: 27px;
+
+$primaryColor: #8D97AD;
+$secondaryColor: #3E4555;
+
+$headerFontSize: 36px;
+$headerFontWeight: 700;
+$headerPadding: 0 0 70px;
+$headerTextAlign: center;
+
+$topSectionTopPadding: 220px;
+$topSectionBottomPadding: 150px;
+
+$evenSectionPadding: 50px;
+
+$bigTextFontSize: $secondaryFontSize;
+$bigTextMarginTop: 55px;
+
+
+$sectionNumberSize: 88px;
+$sectionNumberBgColor: #F8F9FA;
+$sectionNumberColor: #E2536B;
+$sectionNumberShadow: 0px 3px 7px #0000001A;
+$sectionNumberRadius: 50%;
+$sectionNumberFontSize: $headerFontSize;
+$sectionNumberFontWeight: $headerFontWeight;
+$sectionNumberMargin: 0 0 20px;
+
+$sectionTitleFontSize: $secondaryFontSize;
+$sectionTitleMargin: 55px 0 85px;
+
+$suportFormWrapper: 35px;
+$suportFormInputSize: 36px;
+$suportFormInputBorder: 2px solid #E0E6ED;
+$suportFormInputBorderRadius: 4px;
+$suportFormInputPadding: 15px 30px;
+$suportFormInputColor: #8D97AD;
+
+$suportFormInputRadioColor: #E2536B;
+$suportFormInputRadioBoder: 4px solid #E2536B;
+$suportFormInputRadioPadding: 10px 25px;
+$suportFormInputRadioCheckedColor: #fff;
+$suportFormInputRadioCheckedBgColor: #29AF8A;
+$suportFormInputRadioCheckedBorder: 4px solid #29AF8A;
+$suportFormInputBorder: 2px solid #E0E6ED;
+$suportFormInputBgColor: #fff;
+$suportFormInputRadius: 4px;
+$suportFormInputMargin: 0 45px 0 0;
+
+$suportFormInputSubmitColor: $suportFormInputBgColor;
+$suportFormInputSubmitBgColor: #29AF8A;
+$suportFormInputSubmitRadius: $suportFormInputRadius;
+$suportFormInputSubmitMargin: 130px 0 0;
+
+$suportFormUniqueKeyFontSize: 24px;
+$suportFormUniqueKeyMargin: 30px 0 0;
+
+$suportFormInputError: #E2536B;
+
+$suportFormNoticeMargin: 80px 0 0;
+
+$footerPaddingTop: 40px;
+$footerPaddingBottom: 150px;
+$footerSocialSize: 44px;
+$footerSocialColor: #F5F7FA;
+$footerSocialMargin: 5px;
+
+
+$footerCopyrightsMargin: 75px 0 0;
+$footerPrivacyMargin: 20px 0 0;
+
+body {
+    font-family: $primaryFont;
+    font-size: $primaryFontSize;
+    color: $primaryColor;
+}
+
+.main-wrapper {
+    max-width: 1680px;
+}
+
+.section {
+    &--top {
+        padding-top: $topSectionTopPadding;
+        padding-bottom: $topSectionBottomPadding;
+        background: url("../img/scissors.png") left 50px no-repeat;
+    }
+
+    &--even {
+        padding-top: $evenSectionPadding;
+        padding-bottom: $evenSectionPadding;
+        background: url("../img/pillow.png") 100px bottom no-repeat;
+        background-color: #F5F7FA;
+    }
+
+    &__header {
+        font-family: $secondaryFont;
+        font-size: $headerFontSize;
+        font-weight: $headerFontWeight;
+        padding: $headerPadding;
+        text-align: $headerTextAlign;
+        color: $secondaryColor;
+    }
+
+    &__text {
+        &--big {
+            font-size: $bigTextFontSize;
+            margin-top: $bigTextMarginTop;
+            color: $secondaryColor;
+            font-family: $secondaryFont;
+        }
+    }
+
+    &__number {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        height: $sectionNumberSize;
+        width: $sectionNumberSize;
+        align-content: center;
+        justify-content: center;
+        background-color: $sectionNumberBgColor;
+        box-shadow: $sectionNumberShadow;
+        border-radius: $sectionNumberRadius;
+        color: $sectionNumberColor;
+        font-size: $sectionNumberFontSize;
+        font-weight: $sectionNumberFontWeight;
+        margin: $sectionNumberMargin;
+    }
+
+    &__title {
+        font-size: $sectionTitleFontSize;
+        font-family: $secondaryFont;
+        color: $secondaryColor;
+        text-align: center;
+        margin: $sectionTitleMargin;
+    }
+
+}
+
+.support-form {
+    
+    &__wrapper {
+        margin-bottom: $suportFormWrapper;
+    }
+
+    &__input {
+        width: 100%;
+        border: $suportFormInputBorder;
+        border-radius: $suportFormInputBorderRadius;
+        padding: $suportFormInputPadding;
+        color: $suportFormInputColor;
+        &:hover,
+        &:focus,
+        &:active{
+           outline: 0;
+        }
+
+        &::placeholder {
+            color: $suportFormInputColor;
+            opacity: 1;
+        }
+
+        &:-ms-input-placeholder {
+            color: $suportFormInputColor;
+        }
+
+        &::-ms-input-placeholder {
+            color: $suportFormInputColor;
+        }
+
+        &--radio {
+            display: none;
+
+            &__label {
+                font-size: 40px;
+                color: $suportFormInputRadioColor;
+                border: $suportFormInputRadioBoder;
+                border-radius: 4px;
+                width: 100%;
+                max-width: 278px;
+                text-align: center;
+                cursor: pointer;
+                padding: $suportFormInputRadioPadding;
+            }
+
+            &:checked+&__label {
+                color: $suportFormInputRadioCheckedColor;
+                background-color: $suportFormInputRadioCheckedBgColor;
+                border: $suportFormInputRadioCheckedBorder;
+            }
+        }
+
+        &--rodo {
+            display: none;
+            &__label {
+             display: flex;
+             align-items: center;
+             cursor: pointer;
+              &::before {
+                content: '';
+                top: 0;
+                left: 0;
+                flex: 0 0 $suportFormInputSize;
+                height: $suportFormInputSize;
+                border: $suportFormInputBorder;
+                background-color: $suportFormInputBgColor;
+                border-radius: $suportFormInputRadius;
+                margin: $suportFormInputMargin;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+
+            &:checked+&__label::before {
+                content: '\f00c';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+              }
+          }
+    }
+
+    &__submit {
+        padding: 10px 30px;
+        color: $suportFormInputSubmitColor;
+        background-color: $suportFormInputSubmitBgColor;
+        border: 0;
+        border-radius: $suportFormInputSubmitRadius;
+        margin: $suportFormInputSubmitMargin;
+        &:hover,
+        &:focus,
+        &:active{
+           outline: 0;
+        }
+    }
+
+    
+    &__error {
+        color: $suportFormInputError;
+        margin-bottom: 0;
+    }
+
+    &__unique-key {
+        text-align: center;
+        font-size: $suportFormUniqueKeyFontSize;
+        margin-top: $suportFormUniqueKeyMargin;
+    }
+    &__notice {
+        margin: $suportFormNoticeMargin;
+    }
+
+}
+
+.footer{
+    padding-top: $footerPaddingTop;
+    padding-bottom: $footerPaddingBottom;
+
+    &__list {
+        margin: 0;
+        padding: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+
+        &--title {
+            margin: 0;
+        }
+        &--link{
+            color: $primaryColor;
+            &:visited,
+            &:focus {
+                color: $primaryColor;
+            }
+            &:hover {
+                color: $primaryColor;
+                text-decoration: underline;
+            }
+        }
+        &--editions {
+            &__item {
+                padding-left: 0;
+            }
+        }
+
+        &--social {
+            &__item {
+                width: $footerSocialSize;
+                height: $footerSocialSize;
+                border-radius: 50%;
+                background-color: $footerSocialColor;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                color: $primaryColor;
+                margin: $footerSocialMargin;
+                &:hover {
+                    color: $primaryColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__copyrights{
+        margin: $footerCopyrightsMargin;
+        &--privacy {
+            margin-top: $footerPrivacyMargin;
+            text-align: center;
+        }
+    }
+}
